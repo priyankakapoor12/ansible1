@@ -1,0 +1,12 @@
+- name: variables
+  hosts: local
+  connection: local
+  vars_prompt:
+   - name: NAME
+     prompt: please enter the name
+     private: false
+  tasks:
+    - name: name
+      ansible.builtin.debug:
+        msg: "Name is {{NAME}}"
+
